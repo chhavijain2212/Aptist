@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+{% block t %}{{ s.stream }}{% endblock %}
+{% block b %}
+    <script>setTimeout(function () {
+        window.location.href = '{% url 'apti:home' %}'
+    }, (1000 * 60));</script>
+    <p class="alert alert-light" role="alert">
+        Note: The page will switch to next automatically after 60 seconds
+    </p>
+
+    <div class="col-sm-11 col-md-11 col-lg-11 my-2 mx-auto ">
+        <div class="card">
+            <div class="card-body text-left">
+                <h3 class="card-title">Ques:{{ q.ques }}</h3>
+                <form action="{% url 'apti:mark' %}" method="post">
+                    {% csrf_token %}
+                    <input type="radio" name="answer" value="a"> {{ q.op1 }}<br>
+                    <input type="radio" name="answer" value="b"> {{ q.op2 }}<br>
+                    <input type="radio" name="answer" value="c"> {{ q.op3 }}<br>
+                    <input type="radio" name="answer" value="c"> {{ q.op4 }}<br><br>
+                    <input type="submit" class="btn btn-dark" value="Next">
+                </form>
+            </div>
+        </div>
+    </div>
+{% endblock %}

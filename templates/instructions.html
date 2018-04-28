@@ -1,0 +1,35 @@
+{% extends 'base.html' %}
+
+{% block b %}
+    <div class="col-sm-11 col-md-11 col-lg-11 my-2 mx-auto ">
+        <div class="card">
+            <div class="card-body text-left">
+                <h3 class="card-title">Instructions</h3>
+                <ol>
+                    <li>
+                        Each test will have a mixture of standard and expert questions, 7 in total.
+                    </li>
+                    <li>
+                        Based on your score, our system will advise you to continue with this stream or not
+                    </li>
+                    <li>
+                        Each page will display 1 question
+                    </li>
+                    <li>
+                        There is no negative marking.
+                    </li>
+                    <li class="alert alert-danger">
+                        The page will automatically be moved to next question after 60 seconds(no timer will be shown) or you can press the next button.
+                    </li>
+                    <li class="alert alert-danger">
+                        You will not be able to return to the previous question.
+                    </li>
+                </ol>
+                <p>Note: This test is not to check your proficiency in the stream, but to check if you have the skills to persue it.</p>
+                <button class="btn btn-dark" onclick="location.href='{% url 'apti:questions' 0 %}'">Start Test
+                </button>
+            </div>
+        </div>
+    </div>
+
+{% endblock %}
