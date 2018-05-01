@@ -2,7 +2,7 @@
 {% block t %}{{ s.stream }}{% endblock %}
 {% block b %}
     <script>setTimeout(function () {
-        window.location.href = '{% url 'apti:home' %}'
+        window.location.href = '{% url 'apti:mark' %}'
     }, (1000 * 60));</script>
     <p class="alert alert-light" role="alert">
         Note: The page will switch to next automatically after 60 seconds
